@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Front End Developer Portfolio</h1>
+      <nav>
+        <ul>
+          <li><button onclick="showPage('about')">About</button></li>
+          <li><button onclick="showPage('projects')">Projects</button></li>
+          <li><button onclick="showPage('contact')">Contact</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- About Page -->
+    <section id="about" class="page active">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m a passionate front-end developer dedicated to creating clean,
+        functional, and visually stunning web interfaces. With a strong
+        foundation in HTML, CSS, and JavaScript, I enjoy bringing designs to
+        life and solving real-world problems through code.
+      </p>
+      <p>
+        I'm currently pursuing my B.Tech and actively building projects to
+        improve my development skills and gain practical experience. I’m also
+        learning full-stack development with a focus on front-end tools and
+        libraries like Tailwind CSS and React.js.
+      </p>
+      <p>
+        Beyond coding, I love to explore UI/UX trends and contribute to creative
+        digital solutions that enhance user experiences.
+      </p>
+    </section>
+
+    <!-- Projects Page -->
+    <section id="projects" class="page">
+      <h2>To-Do List</h2>
+      <div class="todo">
+        <input id="taskInput" type="text" placeholder="Add a new task..." />
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+      </div>
+
+      <h2>Product Listing</h2>
+      <div class="product-controls">
+        <select id="categorySelect" onchange="filterProducts()">
+          <option value="all">All Categories</option>
+          <option value="tech">Tech</option>
+          <option value="stationery">Stationery</option>
+          <option value="accessories">Accessories</option>
+        </select>
+        <select id="sortSelect" onchange="sortProducts()">
+          <option value="default">Sort By</option>
+          <option value="name">Name (A-Z)</option>
+          <option value="price">Price (Low to High)</option>
+        </select>
+      </div>
+      <div id="productList" class="product-grid"></div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+      <h2>Contact Me</h2>
+      <form onsubmit="handleSubmit(event)">
+        <label>Name:</label>
+        <input type="text" placeholder="Your Name" required />
+        <label>Email:</label>
+        <input type="email" placeholder="Your Email" required />
+        <label>Feedback:</label>
+        <textarea rows="5" placeholder="Your message..." required></textarea>
+        <button type="submit">Send</button>
+        <span id="formMessage" class="form-message"></span>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
